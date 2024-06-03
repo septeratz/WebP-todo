@@ -65,13 +65,17 @@ const Card = ({taskObj, index, deleteTask, updateListArray}) => {
             <div class = "task-holder">
                 <span class = "card-header" style={{"background-color": categoryColor().secondaryColor, "border-radius": "10px"}}>{taskObj.Name}</span>
                 <p className = "mt-3">{taskObj.Description}</p>
-
+    
+                <div style={{border: "1px"}}>
+                    <p className='mt-4'>{taskObj.Category}</p>
+                </div>
+    
                 <div style={{"position": "absolute", "top":"160px", "left":"160px"}}>
                     <button style={{"color" : categoryColor().primaryColor, "cursor" : "pointer"}} onClick = {() => setModal(true)}>Edit</button>
                     <button style = {{"color" : categoryColor().primaryColor, "cursor" : "pointer"}} onClick = {handleDelete}>Delete</button>
                 </div>
-        </div>
-        <EditTask modal = {modal} toggle = {toggle} updateTask = {updateTask} taskObj = {taskObj}/>
+            </div>
+            <EditTask modal = {modal} toggle = {toggle} updateTask = {updateTask} taskObj = {taskObj}/>
         </div>
     );
 };
