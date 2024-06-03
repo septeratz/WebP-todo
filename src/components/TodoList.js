@@ -48,8 +48,12 @@ const TodoList = () => {
     return (
         <>
             <div className = "header text-center">
-                <h3>Todo List</h3>
-                <button className = "btn btn-primary mt-2" onClick = {() => setModal(true)} >Create Task</button>
+                <h2 style={{textAlign: "center"}}>Todo List</h2>
+                 
+                 <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                <button className = "btn btn-primary mt-2" onClick = {() => setModal(true)} >
+                    Create Task</button>
+                </div>
             </div>
             <div className = "task-container">
             {taskList && taskList.map((obj , index) => <Card taskObj = {obj} index = {index} deleteTask = {deleteTask} updateListArray = {updateListArray}/> )}
